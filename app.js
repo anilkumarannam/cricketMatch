@@ -93,7 +93,7 @@ server.get("/districts/:districtId/details/", async (request, response) => {
 //===================================================================//
 
 const getDatabaseConnection = async () => {
-  await getConnection("cricketMatchDeails.db");
+  await getConnection("cricketMatchDetails.db");
   databaseConnection = database.prototype.connection;
 };
 
