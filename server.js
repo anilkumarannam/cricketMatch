@@ -33,38 +33,28 @@ const getConnection = async (dbName) => {
 
 //==================================================================//
 
-const state = (databaseObject) => {
+const player = (databaseObject) => {
   return {
-    stateId: databaseObject.state_id,
-    stateName: databaseObject.state_name,
-    population: databaseObject.population,
+    playerId: databaseObject.player_id,
+    playerName: databaseObject.player_name,
   };
 };
 
-const district = (databaseObject) => {
+const match = (databaseObject) => {
   return {
-    districtId: databaseObject.district_id,
-    districtName: databaseObject.district_name,
-    stateId: databaseObject.state_id,
-    cases: databaseObject.cases,
-    cured: databaseObject.cured,
-    active: databaseObject.active,
-    deaths: databaseObject.deaths,
+    matchId: databaseObject.match_id,
+    match: databaseObject.match,
+    year: databaseObject.year,
   };
 };
 
-const stateStats = (databaseObject) => {
+const playerDetails = (databaseObject) => {
   return {
-    totalCases: databaseObject.totalCases,
-    totalCured: databaseObject.totalCured,
-    totalActive: databaseObject.totalActive,
-    totalDeaths: databaseObject.totalDeaths,
-  };
-};
-
-const stateName = (databaseObject) => {
-  return {
-    stateName: databaseObject.sn,
+    playerId: databaseObject.player_id,
+    playerName: databaseObject.player_name,
+    totalScore: databaseObject.ts,
+    totalFours: databaseObject.tf,
+    totalSixes: databaseObject.tx,
   };
 };
 
@@ -73,9 +63,8 @@ const stateName = (databaseObject) => {
 exports.getConnection = getConnection;
 exports.database = Database;
 exports.server = server;
-exports.state = state;
-exports.district = district;
-exports.stateStats = stateStats;
-exports.stateName = stateName;
+exports.player = player;
+exports.match = match;
+exports.playerDetails = playerDetails;
 
 //==================================================================//
